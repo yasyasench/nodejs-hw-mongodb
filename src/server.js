@@ -25,12 +25,6 @@ export const setupServer = () => {
       },
     }),
   );
-
-  app.get("/", (req, res) => {
-		res.status(200).json({
-			message: "Server is running",
-		});
-  });
     
     app.get("/contacts", async (req, res) => {
 		const contacts = await getAllContacts();
@@ -63,13 +57,6 @@ export const setupServer = () => {
   app.use('*', (req, res, next) => {
     res.status(404).json({
       message: 'Not found',
-    });
-  });
-
-  app.use((err, req, res, next) => {
-    res.status(500).json({
-      message: 'Something went wrong',
-      error: err.message,
     });
   });
 
