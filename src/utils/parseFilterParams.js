@@ -1,17 +1,17 @@
-const parseIsFavorite = (isFavorite) =>
-	typeof isFavorite === "boolean" ? isFavorite : null;
+const parseIsFavourite = (isFavourite) =>
+	typeof isFavourite === "boolean" ? isFavourite : null;
 
 const parseType = (type) =>
 	["personal", "work", "home"].includes(type) ? type : null;
 
 export const parseFilterParams = (query) => {
-	const { isFavorite, contactType } = query;
+	const { isFavourite, contactType } = query;
 
-	const parsedIsFavorite = parseIsFavorite(isFavorite);
+	const parsedIsFavourite = parseIsFavourite(isFavourite);
 	const parsedType = parseType(contactType);
 
 	return {
-		isFavorite: parsedIsFavorite,
+		isFavourite: parsedIsFavourite,
 		type: parsedType,
 	};
 };

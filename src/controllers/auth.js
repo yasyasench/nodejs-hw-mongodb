@@ -1,6 +1,6 @@
 // src/controllers/auth.js
 
-import { ONE_DAY } from '../constants/index.js';
+import {THIRTY_DAYS } from '../constants/index.js';
 import {
     loginUser,
     logoutUser,
@@ -25,12 +25,12 @@ export const loginUserController = async (req, res) => {
 
 	res.cookie("sessionId", session._id, {
 		httpOnly: true,
-		expires: new Date(Date.now() + ONE_DAY),
+		expires: new Date(Date.now() + THIRTY_DAYS),
 	});
 
 	res.cookie("refreshToken", session.refreshToken, {
 		httpOnly: true,
-		expires: new Date(Date.now() + ONE_DAY),
+		expires: new Date(Date.now() + THIRTY_DAYS),
 	});
 
 	res.status(200).json({
@@ -44,11 +44,11 @@ export const loginUserController = async (req, res) => {
 const setupSession = (res, session) => {
   res.cookie('refreshToken', session.refreshToken, {
     httpOnly: true,
-    expires: new Date(Date.now() + ONE_DAY),
+    expires: new Date(Date.now() + THIRTY_DAYS),
   });
   res.cookie('sessionId', session._id, {
     httpOnly: true,
-    expires: new Date(Date.now() + ONE_DAY),
+    expires: new Date(Date.now() + THIRTY_DAYS),
   });
 };
 
