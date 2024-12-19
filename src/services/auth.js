@@ -47,11 +47,12 @@ export const loginUser = async (payload) => {
 	});
 };
 
-export const refreshUserSession = async ({ sessionId, refreshToken }) => {
+
+export const refreshUsersSession = async ({ sessionId, refreshToken }) => {
 	const session = await SessionsCollection.findOne({
 		_id: sessionId,
 		refreshToken,
-	});
+	}); 
 
 	if (!session) {
 		throw createHttpError(401, "Session not found");
