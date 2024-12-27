@@ -19,7 +19,6 @@ const router = Router();
 router.use(authenticate);
 
 
-router.get("/", ctrlWrapper(getServerStatusController));
 router.get("/contacts", ctrlWrapper(getContactsController));
 router.get("/contacts/:id", isValidId, ctrlWrapper(getContactByIdController));
 
