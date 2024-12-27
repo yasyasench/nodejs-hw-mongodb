@@ -4,7 +4,6 @@ import {
     deleteContactController,
     getContactByIdController,
     getContactsController,
-    getServerStatusController,
     patchContactController
 } from '../controllers/contacts.js';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
@@ -31,7 +30,7 @@ router.post(
 router.patch(
 	"/:id",
 	isValidId,
-	validateBody(updateContactsSchema),
+	validateBody(updateContactSchema),
 	ctrlWrapper(patchContactController),
 );
 
