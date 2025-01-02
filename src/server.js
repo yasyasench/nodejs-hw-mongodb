@@ -5,7 +5,7 @@ import pino from 'pino-http';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
-import { getEnvVar } from './utils/env.js';
+import { env } from './utils/env.js';
 
 
 import router from './routers/index.js';
@@ -13,7 +13,7 @@ import router from './routers/index.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 
-const PORT = Number(getEnvVar('PORT', '3000'));
+const PORT = Number(env('PORT', '3000'));
 
 
 export const setupServer = () => {
