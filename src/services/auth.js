@@ -100,10 +100,16 @@ export const requestResetToken = async (email) => {
 		throw createHttpError(404, "User not found!");
 	}
 
-	const resetToken = jwt.sign({ sub: user._id, email }, env("JWT_SECRET"), {
-		expiresIn: "5m",
-	});
-
+	  const resetToken = jwt.sign(
+    {
+      sub: user._id,
+      email,
+    },
+    env('JWT_SECRET'),
+    {
+      expiresIn: '5m',
+    },
+  	);
 	const sendResetEmailTempatePath = path.join(
 		TEMPLATES_DIR,
 		"reset-password-email.html",
