@@ -3,7 +3,7 @@ import { UsersCollection } from "./../db/models/user.js";
 import bcrypt from "bcrypt";
 import { randomBytes } from "node:crypto";
 import { SessionsCollection } from "./../db/models/session.js";
-import { FIFTEEN_MINUTES, SMTP, THIRTY_DAYS } from "./../constants/index.js";
+import { FIFTEEN_MINUTES, SMTP, TEMPLATES_DIR, THIRTY_DAYS } from "./../constants/index.js";
 import { env } from '../utils/env.js';
 import handlebars from 'handlebars';
 import path from 'node:path';
