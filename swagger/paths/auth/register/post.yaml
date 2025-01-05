@@ -1,0 +1,61 @@
+tags:
+  - Auth
+summary: 'Registration of a new user'
+operationId: 'registerUser'
+security: []
+requestBody:
+  description: 'Credentials of new user'
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/schemas/user.yaml'
+responses:
+  '201':
+    description: 'Successfully registered a user'
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: 'Successfully registered a user!'
+            data:
+              type: object
+              required:
+                - name
+                - email
+                - id
+              properties:
+                email:
+                  description: 'User email'
+                  type: string
+                  format: email
+                  example: 'user@example.com'
+                name:
+                  description: 'User name'
+                  type: string
+                  example: 'nata_jao'
+                _id:
+                  description: 'Unique user id'
+                  type: string
+                  example: '677a8e0dd2f2167ae8b3872f'
+                createdAt:
+                  description: 'User creation date'
+                  type: string
+                  example: '2025-01-05T13:50:06.047Z'
+                updatedAt:
+                  description: 'User last update date'
+                  type: string
+                  example: '2025-01-05T13:50:06.047Z'
+
+  '400':
+    $ref: '../../../components/responses/400.yaml'
+  '409':
+    $ref: '../../../components/responses/409.yaml'
+  '500':
+    $ref: '../../../components/responses/500.yaml'

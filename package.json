@@ -6,7 +6,10 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build-docs",
+    "build-docs": "redocly bundle --ext json -o docs/swagger.json",
+    "preview-docs": "redocly preview-docs"
   },
   "keywords": [],
   "author": "Yaroslava Senchyshena <senchyshena.ya@gmail.com>",
@@ -14,6 +17,7 @@
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.16.0",
+    "@redocly/cli": "^1.27.0",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
     "nodemon": "^3.1.7",
@@ -34,6 +38,7 @@
     "mongoose": "^8.8.3",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.16",
-    "pino-http": "^10.3.0"
+    "pino-http": "^10.3.0",
+    "swagger-ui-express": "^5.0.1"
   }
 }
