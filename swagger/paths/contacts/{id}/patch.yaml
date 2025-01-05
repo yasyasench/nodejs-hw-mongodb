@@ -2,7 +2,7 @@ tags:
   - Contacts
 summary: Update a contact by ID
 operationId: updateContact
-description: Update details of a specific contact using their ID.
+description: Update details of a specific contact using their id.
 security:
   - bearerAuth: []
 parameters:

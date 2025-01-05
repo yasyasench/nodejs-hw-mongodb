@@ -2,7 +2,7 @@ tags:
   - Contacts
 summary: Delete a contact by ID
 operationId: deleteContact
-description: Remove a specific contact from the database using their ID.
+description: Remove a specific contact from the database using their id.
 security:
   - bearerAuth: []
 parameters:
