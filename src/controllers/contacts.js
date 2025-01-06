@@ -57,7 +57,7 @@ export const createContactController = async (req, res) => {
 	let photoUrl;
 
 	if (photo) {
-		photoUrl = await saveFileToUploadDir(photo);
+		photoUrl = await saveFileToCloudinary(photo);
 	}
 
 	const newContact = await createContact(
@@ -78,7 +78,7 @@ export const patchContactController = async (req, res, next) => {
 	let photoUrl;
 
 	if (photo) {
-		photoUrl = await saveFileToUploadDir(photo);
+		photoUrl = await saveFileToCloudinary(photo);
 	}
 
 	const result = await updateContact(
