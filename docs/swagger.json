@@ -366,7 +366,7 @@
         ],
         "summary": "Update a contact by ID",
         "operationId": "updateContact",
-        "description": "Update details of a specific contact using their ID.",
+        "description": "Update details of a specific contact using their id.",
         "security": [
           {
             "bearerAuth": []
@@ -478,7 +478,7 @@
         ],
         "summary": "Delete a contact by ID",
         "operationId": "deleteContact",
-        "description": "Remove a specific contact from the database using their ID.",
+        "description": "Remove a specific contact from the database using their id.",
         "security": [
           {
             "bearerAuth": []
