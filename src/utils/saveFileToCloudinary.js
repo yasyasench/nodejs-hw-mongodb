@@ -2,7 +2,6 @@
 
 import cloudinary from 'cloudinary';
 import fs from 'fs'; 
-
 import { env } from './env.js';
 import { CLOUDINARY } from '../constants/index.js';
 
