@@ -13,7 +13,19 @@ cloudinary.v2.config({
 });
 
 export const saveFileToCloudinary = async (file) => {
-  const response = await cloudinary.v2.uploader.upload(file.path);
-  await fs.unlink(file.path);
-  return response.secure_url;
+  try {
+    const response = await cloudinary.v2.uploader.upload(file.path);
+
+    fs.unlink(file.path, (err) => {
+      if (err) {
+        console.error('Failed to delete file:', err.message);
+      } else {
+        console.log('File deleted successfully');
+      }
+    });
+
+    return response.secure_url;
+  } catch {
+    throw createHttpError(500, 'Failed to upload image to Cloudinary');
+  }
 };
