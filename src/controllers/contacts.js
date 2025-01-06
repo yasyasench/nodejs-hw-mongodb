@@ -4,7 +4,7 @@ import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
 import { parseFilterParams } from '../utils/parseFilterParams.js';
 import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
-import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
+
 
 
 export const getServerStatusController = (req, res) => {
